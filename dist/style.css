@@ -16,9 +16,9 @@ body {
 }
 
 #title {
-  font-size: 45px;
+  font-size: 40px;
   margin-left: 15px;
-  font-family: Fantasy;
+  font-family: cursive;
 }
 
 span {
@@ -26,7 +26,7 @@ span {
 }
 
 .title-col {
-  font-family: "FreeMono, monospace";
+    font-family: cursive;
 }
 .input-container {
   display: flex;
@@ -158,7 +158,7 @@ span {
 #main-title {
   font-size: 60px;
   animation: titleAnimation 2s ease-in-out infinite;
-  font-family: Fantasy;
+  font-family: cursive;
 }
 
 @keyframes titleAnimation {
@@ -176,10 +176,10 @@ span {
 }
 
 #second-title {
-  font-family: "FreeMono, monospace";
-  font-size: 20px;
-  font-weight: lighter;
-  color: #f6f6f69f;
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #f6f6f69f;
 }
 
 /* Boxes */
@@ -235,7 +235,7 @@ p:hover {
   font-size: 20px;
   margin-bottom: 10px;
   color: #2b3b0b;
-  font-family: Papyrus, fantasy;
+  font-family: cursive;
 }
 
 .recipe-container img {
