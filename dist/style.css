@@ -22,7 +22,7 @@ body {
 }
 
 span {
-  color: #4682b4;
+  color: #FF8C00;
 }
 
 .title-col {
@@ -64,11 +64,12 @@ span {
 
 #submitBtn {
   margin-left: 10px;
+  width: 20px;
 }
 
 .button-64 {
   align-items: center;
-  background-image: linear-gradient(144deg, #4682b4, #4682b4 50%, #4682b4);
+  background-image: linear-gradient(144deg, #FF8C00,#FF8C00 50%, #FF8C00);
   border: 0;
   border-radius: 40px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -98,9 +99,9 @@ span {
   outline: 0;
   background-image: linear-gradient(
     144deg,
-    #4683b499,
-    #4683b499 50%,
-    #4683b499
+    #ff8c0080,
+    #ff8c0080 50%,
+    #ff8c0080
   ); /* Adjusted hover background color */
 }
 
@@ -142,6 +143,7 @@ span {
   height: 320px;
   object-fit: cover;
   border-radius: 4px;
+ 
 }
 
 .image-text {
@@ -260,4 +262,83 @@ p:hover {
   content: "";
   display: table;
   clear: both;
+}
+
+/* Existing code above this line */
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #title {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .input-container {
+    margin-left: 0;
+  }
+
+  #input-context {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .button-64 {
+    margin-left: 0;
+  }
+
+  .button-64 {
+    font-size: 16px;
+    min-width: 140px;
+  }
+
+  .img-row {
+    flex-direction: column;
+  }
+
+  .recipe-container {
+    width: calc(50% - 20px);
+  }
+}
+
+/* Existing code above this line */
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px; /* Adjust padding for better spacing on smaller screens */
+  }
+
+  #title {
+    margin-left: 0;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .input-container {
+    margin-left: 0;
+    margin-top: 15px; /* Add margin to separate input on smaller screens */
+  }
+
+  #input-context {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #submitBtn {
+    margin-left: 0;
+    margin-top: 10px; /* Add margin to separate button on smaller screens */
+  }
 }
