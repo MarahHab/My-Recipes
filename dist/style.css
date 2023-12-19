@@ -130,6 +130,7 @@ span {
 .img-row {
   display: flex;
   justify-content: center;
+  margin-top: 25px;
 }
 
 .image-container {
@@ -183,6 +184,18 @@ span {
 }
 
 /* Boxes */
+#vegetarian-icon{
+    height: 40px;
+    width: 40px;
+}
+#glutenFree-icon{
+    height: 55px;
+    width: 55px;
+}
+#dairyFree-icon{
+    height: 37px;
+    width: 37px;
+}
 
 .menu {
   margin-top: 20px;

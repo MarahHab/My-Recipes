@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+
     <title>My Recipes</title>
 </head>
 <body>
@@ -28,7 +28,10 @@
                 <label for="glutenFree"> Gluten Free </label><br>
 
                 <input type="checkbox" id="diaryFree" checked>
-                <label for="diaryFree"> Diary Free </label><br>
+                <label for="diaryFree"> Dairy Free </label><br>
+
+                <input type="checkbox" id="unvegetarianFree" checked>
+                <label for="unvegetarianFree"> Vegetarian </label><br>
             </div>
             
         </div>
@@ -38,7 +41,7 @@
       
       <div class="row img-row">
         <div class="image-container">
-            <img id="main-img" src="main.jpg" alt="Main Image">
+            <img id="main-img" src="assets/main.jpg" alt="Main Image">
             <div class="image-text">
                 <h1 id="main-title">My Recipes</h1>
                 <h5 id="second-title">No Fluff, Just Recipes</h5>
@@ -52,7 +55,8 @@
     <script id="recipe-template" type="text/x-handlebars-template">
         {{#each recipes}}
             <div class="recipe-container">
-                <h2><a href="{{href}}" target="_blank">{{title}}</a></h2>
+                <h2 id="recipe-title"><a href="{{href}}" target="_blank">{{title}}</a></h2>
+
                 <img src="{{thumbnail}}" alt="Recipe Thumbnail">
                 <span>Ingredients:</span>
                <ul>
@@ -60,9 +64,6 @@
                     <p>{{this}}</p>
                 {{/each}}
                </ul>
-                
-                
-            
             </div>
         {{/each}}
     </script> 
