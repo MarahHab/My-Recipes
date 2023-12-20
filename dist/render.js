@@ -26,10 +26,5 @@ class Render {
                 $(this).append('<img id="dairyFree-icon" src="assets/dairyFree.jpg" alt="Dairy-Free Icon">');
             });
         }
-
-
-       
-
-        
     }
 }
