@@ -45,16 +45,14 @@ app.get('/recipes/:ingredient', async (req, res) => {
       if (unvegetarianFree && recipeContainsUnvegetarian(recipe)) {
         return false;
       }
-
-      console.log(recipe)
       return true;
     });
 
-    
-    res.json({ recipes: filteredRecipes });
+  
+    res.status(200).json({ recipes: filteredRecipes });
   } catch (error) {
     console.error(error);
-    res.json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: 'Server Error Occured' });
   }
 });
 
@@ -82,7 +80,7 @@ const filtered = function (arr) {
   }));
 }
 
-const PORT = 5002;
+const PORT = 5003;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

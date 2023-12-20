@@ -1,11 +1,13 @@
 class Render {
     display(recipes) {
         $(".menu").empty();
+        
+
         const source = $("#recipe-template").html();
         const template = Handlebars.compile(source);
         let html = template(recipes);
         $(".menu").append(html);
-
+    
         
         if (recipes.unvegetarianFree) {
             $(".recipe-container").each(function (index) {
@@ -24,6 +26,9 @@ class Render {
                 $(this).append('<img id="dairyFree-icon" src="assets/dairyFree.jpg" alt="Dairy-Free Icon">');
             });
         }
+
+
+       
 
         
     }
