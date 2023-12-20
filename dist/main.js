@@ -9,6 +9,7 @@ function searchRecipes() {
   $.getJSON(
     `/recipes/${ingredient}?dairyFree=${dairyFree}&glutenFree=${glutenFree}&unvegetarianFree=${vegetarian}`
   ).then((recipes) => {
+
     recipes.unvegetarianFree = vegetarian;
     recipes.glutenFree = glutenFree;
     recipes.dairyFree = dairyFree;
@@ -23,3 +24,4 @@ function searchRecipes() {
     });
   });
 }
+

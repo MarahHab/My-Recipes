@@ -1,13 +1,16 @@
 class Render {
     display(recipes) {
-        $(".menu").empty();
-        
+        $(".menu").empty();                   
 
         const source = $("#recipe-template").html();
         const template = Handlebars.compile(source);
         let html = template(recipes);
         $(".menu").append(html);
-    
+        
+        if (!recipes || !recipes.recipes || recipes.recipes.length === 0) {
+            $(".menu").append('<h2 id="err-msg">Invalid ingredient or no recipes found❗</h2>');
+            return;
+          } 
         
         if (recipes.unvegetarianFree) {
             $(".recipe-container").each(function (index) {

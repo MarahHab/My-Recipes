@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 
 const dairyIngredients = ["cream", "cheese", "milk", "butter", "creme", "ricotta", "mozzarella", "custard", "cream cheese", "condensed milk", "heavy cream"];
 const glutenIngredients = ["flour", "bread", "spaghetti", "biscuits", "beer"];
-const unvegetarianIngredients = ["red snapper","chicken stock","lamb loin chops", "chicken thighs", "salmon", "chicken", "beef", "pork", "fish", "shrimp", "lamb", "bacon", "sausage", "cream", "cheese", "milk", "butter", "creme", "ricotta", "mozzarella", "custard", "cream cheese", "condensed milk", "heavy cream"];
+const unvegetarianIngredients = ["red snapper","chicken stock","lamb loin chops", "chicken thighs", "salmon", "chicken", "beef", "pork", "fish", "shrimp", "lamb", "bacon", "sausage", "cream", "cheese", "milk", "butter", "creme", "ricotta", "mozzarella", "custard", "cream cheese", "condensed milk", "heavy cream","parmigiano-reggiano"];
 
 
 app.get('/', (req, res) => {

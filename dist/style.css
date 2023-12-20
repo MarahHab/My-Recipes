@@ -321,6 +321,14 @@ p:hover {
   }
 }
 
+#err-msg{
+    color: red;
+    text-align: center;
+    margin: auto;
+    margin-top: 25px;
+    font-family: cursive;
+}
+
 /* Existing code above this line */
 
 @media screen and (max-width: 768px) {
