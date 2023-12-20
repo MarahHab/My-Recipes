@@ -8,4 +8,4 @@ This project involves creating a server that interacts with a [Recipe API](https
 **The server will be accessible at: http://localhost:5000 by default.**
 
 ## Screenshot
-![img](webImg.jpg)
+![img](dist/assets/webImg.jpg)
