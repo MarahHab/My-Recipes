@@ -5,7 +5,7 @@ This project involves creating a server that interacts with a [Recipe API](https
 ## Install Dependencies:
 1. ```npm install```
 2.  ``` npm install express axios ```
-**The server will be accessible at: http://localhost:5000 by default.**
+**The server will be accessible at: http://localhost:5003 by default.**
 
 ## Screenshot
 ![img](dist/assets/webImg.jpg)
