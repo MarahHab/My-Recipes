@@ -1,3 +1,4 @@
+
 const renderer = new Render();
 
 function searchRecipes() {
@@ -6,15 +7,19 @@ function searchRecipes() {
   const glutenFree = $("#glutenFree").is(":checked");
   const vegetarian = $("#unvegetarianFree").is(":checked");
 
+
+
   $.getJSON(
     `/recipes/${ingredient}?dairyFree=${dairyFree}&glutenFree=${glutenFree}&unvegetarianFree=${vegetarian}`
   ).then((recipes) => {
-
+    
     recipes.unvegetarianFree = vegetarian;
     recipes.glutenFree = glutenFree;
     recipes.dairyFree = dairyFree;
     renderer.display(recipes);
+    console.log(recipes)
 
+    
     $(".recipe-container img").on("click", function () {
       const index = $(this).closest(".recipe-container").index();
       const recipe = recipes.recipes[index];

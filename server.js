@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const path = require('path');
+const faker = require('faker');
 
 const app = express();
 
@@ -27,10 +28,12 @@ app.get('/recipes/:ingredient', async (req, res) => {
     const response = await axios.get(apiUrl);
     const responseData = response.data;
     const recipes = filtered(responseData.results);
-    
+    console.log(recipes)
     const glutenFree = req.query.glutenFree === 'true';
     const dairyFree = req.query.dairyFree === 'true';
     const unvegetarianFree = req.query.unvegetarianFree === 'true';
+    
+
 
     const filteredRecipes = recipes.filter(recipe => {
       if (glutenFree && recipeContainsGluten(recipe)) { 
@@ -45,7 +48,11 @@ app.get('/recipes/:ingredient', async (req, res) => {
       if (unvegetarianFree && recipeContainsUnvegetarian(recipe)) {
         return false;
       }
+      recipe.chef = generateFakerChefName()
+      recipe.time = generateBakingTime(15,45)
       return true;
+
+      
     });
 
   
@@ -71,12 +78,22 @@ function recipeContainsUnvegetarian(recipe) {
   return ingredients.some(ingredient => unvegetarianIngredients.includes(ingredient));
 }
 
+function generateFakerChefName(){
+  return faker.name.firstName() + ' ' + faker.name.lastName()
+}
+
+function generateBakingTime(min , max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const filtered = function (arr) {
+  
   return arr.map(recipe => ({
     title: recipe.title,
     thumbnail: recipe.thumbnail,
     href: recipe.href,
-    ingredients: recipe.ingredients
+    ingredients: recipe.ingredients,
+
   }));
 }
 

@@ -360,6 +360,23 @@ p:hover {
 
   #submitBtn {
     margin-left: 0;
-    margin-top: 10px; /* Add margin to separate button on smaller screens */
+    margin-top: 10px; /
   }
+}
+
+#chef-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333; 
+  background-color: #ffc107;
+  padding: 10px;
+  border-radius: 8px; 
+  margin-top: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+#chef-name:hover {
+  background-color: #ffc1076c; 
 }
