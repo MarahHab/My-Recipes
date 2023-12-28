@@ -28,38 +28,42 @@ app.get('/recipes/:ingredient', async (req, res) => {
     const response = await axios.get(apiUrl);
     const responseData = response.data;
     const recipes = filtered(responseData.results);
-    console.log(recipes)
+
     const glutenFree = req.query.glutenFree === 'true';
     const dairyFree = req.query.dairyFree === 'true';
     const unvegetarianFree = req.query.unvegetarianFree === 'true';
-    
 
+    const filteredRecipes = recipes.map(recipe => {
+      const emailSubject = `Check out this recipe! ${recipe.title}`;
+      const emailBody = `You can see the recipe in this video: ${recipe.href}`;
 
-    const filteredRecipes = recipes.filter(recipe => {
-      if (glutenFree && recipeContainsGluten(recipe)) { 
-        
+      return {
+        ...recipe,
+        chef: generateFakerChefName(),
+        time: generateBakingTime(15, 45),
+        emailSubject,
+        emailBody,
+      };
+    }).filter(recipe => {
+      if (glutenFree && recipeContainsGluten(recipe)) {
         return false;
       }
 
       if (dairyFree && recipeContainsDairy(recipe)) {
-        
         return false;
       }
+
       if (unvegetarianFree && recipeContainsUnvegetarian(recipe)) {
         return false;
       }
-      recipe.chef = generateFakerChefName()
-      recipe.time = generateBakingTime(15,45)
-      return true;
 
-      
+      return true;
     });
 
-  
     res.status(200).json({ recipes: filteredRecipes });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Server Error Occured' });
+    res.status(500).json({ error: 'Server Error Occurred' });
   }
 });
 
@@ -79,21 +83,20 @@ function recipeContainsUnvegetarian(recipe) {
 }
 
 function generateFakerChefName(){
-  return faker.name.firstName() + ' ' + faker.name.lastName()
+  return faker.name.firstName() + ' ' + faker.name.lastName();
 }
 
-function generateBakingTime(min , max){
+function generateBakingTime(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 const filtered = function (arr) {
-  
   return arr.map(recipe => ({
     title: recipe.title,
     thumbnail: recipe.thumbnail,
     href: recipe.href,
     ingredients: recipe.ingredients,
-
+    thumbnail : recipe.thumbnail
   }));
 }
 
@@ -101,3 +104,5 @@ const PORT = 5003;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+

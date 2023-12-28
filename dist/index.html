@@ -58,13 +58,16 @@
             <div class="recipe-container">
                 <h2 id="recipe-title"><a href="{{href}}" target="_blank">{{title}} &#128366;</a></h2>
 
-                <img src="{{thumbnail}}" alt="Recipe Thumbnail">
+                <img src="{{thumbnail}}" alt="Recipe GIF">
+              
+
                 <span>Ingredients:</span>
                <ul>
                 {{#each ingredients}}
                     <p>{{this}}</p>
                 {{/each}}
                </ul>
+               <button class="share-email-btn" data-title="{{title}}" data-link="{{href}}">Share via Email</button>
 
             </div>
         {{/each}}

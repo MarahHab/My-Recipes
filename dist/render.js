@@ -34,13 +34,11 @@ class Render {
 
         $(".recipe-container").each(function (index) {
             const chefName = recipes.recipes[index].chef;
-            $(this).append(`<br><p id=chef-name>Chef: ${chefName}</p>`);
+            const time = recipes.recipes[index].time;
+            $(this).append(`<br><p id=chef-name>Chef: ${chefName}</p><br><p>⌚ ${time}min</p>`);
           });
         
-        $(".recipe-container").each(function (index) {
-        const time = recipes.recipes[index].time;
-        $(this).append(`<br><p>⌚ ${time}min</p>`);
-        });
+        
         
           
         
